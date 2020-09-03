@@ -6,7 +6,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
 use Vanguard\Http\Controllers\Controller;
 use Vanguard\Repositories\Country\CountryRepository;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\User\UserRepository;
 use Vanguard\Support\Enum\UserStatus;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Authorization;
+namespace Tests\Feature\Api\Authorization;
 
 use Carbon\Carbon;
 use Facades\Tests\Setup\RoleFactory;
@@ -9,11 +9,11 @@ use Illuminate\Support\Collection;
 use Tests\Feature\ApiTestCase;
 use Tests\Feature\FunctionalOldTestCase;
 use Vanguard\Country;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Services\Logging\UserActivity\Activity;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\Transformers\ActivityTransformer;
-use Vanguard\Transformers\RoleTransformer;
+use RoleModule\Transformer\RoleTransformer;
 use Vanguard\Transformers\SessionTransformer;
 use Vanguard\Transformers\UserTransformer;
 use Vanguard\User;

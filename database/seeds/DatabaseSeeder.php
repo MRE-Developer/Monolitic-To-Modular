@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
+    public static $seeders = [];
     /**
      * Run the database seeds.
      *
@@ -15,8 +16,9 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(CountriesSeeder::class);
-        $this->call(RolesSeeder::class);
-        $this->call(PermissionsSeeder::class);
+        foreach (self::$seeders as $seeder){
+            $this->call($seeder);
+        }
         $this->call(UserSeeder::class);
 
         Model::reguard();

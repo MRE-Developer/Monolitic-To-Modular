@@ -5,10 +5,10 @@ namespace Vanguard\Providers;
 use Carbon\Carbon;
 use Vanguard\Repositories\Country\CountryRepository;
 use Vanguard\Repositories\Country\EloquentCountry;
-use Vanguard\Repositories\Permission\EloquentPermission;
-use Vanguard\Repositories\Permission\PermissionRepository;
-use Vanguard\Repositories\Role\EloquentRole;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Database\Repositories\Permission\EloquentPermission;
+use RoleModule\Database\Repositories\Permission\PermissionRepository;
+use RoleModule\Database\Repositories\Role\EloquentRole;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\Session\DbSession;
 use Vanguard\Repositories\Session\SessionRepository;
 use Vanguard\Repositories\User\EloquentUser;
@@ -37,8 +37,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(UserRepository::class, EloquentUser::class);
-        $this->app->singleton(RoleRepository::class, EloquentRole::class);
-        $this->app->singleton(PermissionRepository::class, EloquentPermission::class);
         $this->app->singleton(SessionRepository::class, DbSession::class);
         $this->app->singleton(CountryRepository::class, EloquentCountry::class);
 

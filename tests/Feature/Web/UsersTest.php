@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web;
+namespace Tests\Feature\Web;
 
 use Carbon\Carbon;
 use Facades\Tests\Setup\UserFactory;
@@ -16,7 +16,7 @@ use Facades\Tests\Setup\RoleFactory;
 use Tests\TestCase;
 use Tests\UpdatesSettings;
 use Vanguard\Events\User\UpdatedByAdmin;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Services\Auth\Api\Token;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\User;

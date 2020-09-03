@@ -5,7 +5,7 @@ namespace Vanguard\Http\Controllers\Api\Auth;
 use Illuminate\Auth\Events\Registered;
 use Vanguard\Http\Controllers\Api\ApiController;
 use Vanguard\Http\Requests\Auth\RegisterRequest;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\User\UserRepository;
 use Vanguard\Support\Enum\UserStatus;
 

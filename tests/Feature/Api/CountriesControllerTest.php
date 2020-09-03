@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api;
+namespace Tests\Feature\Api;
 
 use Tests\Feature\ApiTestCase;
 use Vanguard\Country;

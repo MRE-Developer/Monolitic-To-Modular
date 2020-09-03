@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Auth\Password;
+namespace Tests\Feature\Api\Auth\Password;
 
 use Mail;
 use Tests\Feature\ApiTestCase;

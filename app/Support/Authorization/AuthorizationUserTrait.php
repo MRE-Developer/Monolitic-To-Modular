@@ -2,7 +2,7 @@
 
 namespace Vanguard\Support\Authorization;
 
-use Vanguard\Role;
+use RoleModule\Role;
 
 trait AuthorizationUserTrait
 {

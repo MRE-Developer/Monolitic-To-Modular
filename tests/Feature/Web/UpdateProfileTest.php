@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web;
+namespace Tests\Feature\Web;
 
 use Carbon\Carbon;
 use Facades\Tests\Setup\UserFactory;
@@ -12,7 +12,7 @@ use Storage;
 use Tests\TestCase;
 use Vanguard\Events\User\ChangedAvatar;
 use Vanguard\Events\User\UpdatedProfileDetails;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\UserActivity\Logger;
 

@@ -4,7 +4,7 @@ namespace Vanguard\Services\Auth\Social;
 
 use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as SocialUser;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\User\UserRepository;
 use Vanguard\Support\Enum\UserStatus;
 

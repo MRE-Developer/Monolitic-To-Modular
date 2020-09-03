@@ -1,6 +1,6 @@
 <?php
 
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\User;
 use Illuminate\Database\Seeder;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api;
+namespace Tests\Feature\Api;
 
 use Carbon\Carbon;
 use Tests\Feature\ApiTestCase;
 use Vanguard\Repositories\User\UserRepository;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\Transformers\UserTransformer;
 use Vanguard\User;

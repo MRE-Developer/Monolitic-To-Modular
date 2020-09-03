@@ -16,7 +16,7 @@ $factory->define(Vanguard\User::class, function (Faker $faker) {
             return $faker->randomElement(Vanguard\Country::pluck('id')->toArray());
         },
         'role_id' => function () {
-            return factory(\Vanguard\Role::class)->create()->id;
+            return factory(\RoleModule\Role::class)->create()->id;
         },
         'status' => Vanguard\Support\Enum\UserStatus::ACTIVE,
         'birthday' => $faker->date(),

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web\Auth;
+namespace Tests\Feature\Web;
 
 use Facades\Tests\Setup\UserFactory;
 use Illuminate\Auth\Notifications\VerifyEmail;

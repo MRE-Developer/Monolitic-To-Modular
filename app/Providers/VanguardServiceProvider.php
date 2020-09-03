@@ -25,7 +25,7 @@ class VanguardServiceProvider extends BaseVanguardServiceProvider
             \Vanguard\Support\Plugins\Dashboard\Dashboard::class,
             \Vanguard\Support\Plugins\Users::class,
             \Vanguard\UserActivity\UserActivity::class,
-            \Vanguard\Support\Plugins\RolesAndPermissions::class,
+            \RoleModule\Plugins\RolesAndPermissions::class,
             \Vanguard\Support\Plugins\Settings::class,
             \Vanguard\Announcements\Announcements::class,
         ];

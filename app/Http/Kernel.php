@@ -60,8 +60,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'registration' => \Vanguard\Http\Middleware\RegistrationEnabled::class,
         'social.login' => \Vanguard\Http\Middleware\SocialLogin::class,
-        'role' => \Vanguard\Http\Middleware\CheckRole::class,
-        'permission' => \Vanguard\Http\Middleware\CheckPermissions::class,
         'session.database' => \Vanguard\Http\Middleware\DatabaseSession::class,
         'two-factor' => \Vanguard\Http\Middleware\TwoFactorEnabled::class,
         'verify-2fa-phone' => \Vanguard\Http\Middleware\VerifyTwoFactorPhone::class,

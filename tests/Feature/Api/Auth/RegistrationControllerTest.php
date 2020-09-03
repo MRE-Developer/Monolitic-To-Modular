@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Auth;
+namespace Tests\Feature\Api\Auth;
 
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Support\Arr;

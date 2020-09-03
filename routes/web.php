@@ -120,20 +120,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
 
     /**
-     * Roles & Permissions
-     */
-    Route::group(['namespace' => 'Authorization'], function () {
-        Route::resource('roles', 'RolesController')->except('show')->middleware('permission:roles.manage');
-
-        Route::post('permissions/save', 'RolePermissionsController@update')
-            ->name('permissions.save')
-            ->middleware('permission:permissions.manage');
-
-        Route::resource('permissions', 'PermissionsController')->middleware('permission:permissions.manage');
-    });
-
-
-    /**
      * Settings
      */
 

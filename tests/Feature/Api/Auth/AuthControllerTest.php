@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Auth;
+namespace Tests\Feature\Api\Auth;
 
 use Carbon\Carbon;
 use Tests\Feature\ApiTestCase;

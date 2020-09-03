@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 use Vanguard\Repositories\User\EloquentUser;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\User;
 

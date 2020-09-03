@@ -1,18 +1,18 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web;
+namespace Tests\Feature\Web;
 
 use Facades\Tests\Setup\RoleFactory;
 use Facades\Tests\Setup\UserFactory;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Vanguard\Events\Permission\Created;
-use Vanguard\Events\Permission\Deleted;
-use Vanguard\Events\Permission\Updated;
-use Vanguard\Events\Role\PermissionsUpdated;
-use Vanguard\Permission;
-use Vanguard\Role;
+use RoleModule\Event\Permission\Created;
+use RoleModule\Event\Permission\Deleted;
+use RoleModule\Event\Permission\Updated;
+use RoleModule\Event\Role\PermissionsUpdated;
+use RoleModule\Permission;
+use RoleModule\Role;
 
 class PermissionsTest extends TestCase
 {

@@ -46,13 +46,14 @@
         "webpatser/laravel-countries": "dev-master"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "^1.0",
-        "phpunit/phpunit": "~8.0",
-        "barryvdh/laravel-ide-helper": "2.6.*",
         "barryvdh/laravel-debugbar": "3.2.*",
+        "barryvdh/laravel-ide-helper": "2.6.*",
         "facade/ignition": "^1.4",
-        "nunomaduro/collision": "^3.0"
+        "fzaninotto/faker": "~1.4",
+        "imanghafoori/laravel-microscope": "^1.0",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "~8.0"
     },
     "autoload": {
         "classmap": [
@@ -60,7 +61,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "Vanguard\\": "app/"
+            "Vanguard\\": "app/",
+            "RoleModule\\": "RolePermissionModule/"
         }
     },
     "autoload-dev": {

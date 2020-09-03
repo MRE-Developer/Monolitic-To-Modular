@@ -2,7 +2,6 @@
 
 @section('page-title', __('Dashboard'))
 @section('page-heading', __('Dashboard'))
-
 @section('breadcrumbs')
     <li class="breadcrumb-item active">
         @lang('Dashboard')
@@ -14,6 +13,7 @@
 
 <div class="row">
     @foreach (\Vanguard\Plugins\Vanguard::availableWidgets(auth()->user()) as $widget)
+
         @if ($widget->width)
             <div class="col-md-{{ $widget->width }}">
         @endif
@@ -21,6 +21,7 @@
         @if($widget->width)
             </div>
         @endif
+
     @endforeach
 </div>
 

@@ -2,8 +2,8 @@
 
 namespace Vanguard\Repositories\User;
 
-use Vanguard\Repositories\Role\RoleRepository;
-use Vanguard\Role;
+use RoleModule\Database\Repositories\Role\RoleRepository;
+use RoleModule\Role;
 use Vanguard\Services\Auth\Social\ManagesSocialAvatarSize;
 use Vanguard\Services\Upload\UserAvatarManager;
 use Vanguard\User;

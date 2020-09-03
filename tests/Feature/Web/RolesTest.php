@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web;
+namespace Tests\Feature\Web;
 
 use Facades\Tests\Setup\UserFactory;
 use Facades\Tests\Setup\RoleFactory;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Vanguard\Role;
+use RoleModule\Role;
 
 class RolesTest extends TestCase
 {

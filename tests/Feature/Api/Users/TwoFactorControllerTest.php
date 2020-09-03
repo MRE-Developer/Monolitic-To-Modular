@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Users;
+namespace Tests\Feature\Api\Users;
 
 use Authy;
 use Facades\Tests\Setup\UserFactory;

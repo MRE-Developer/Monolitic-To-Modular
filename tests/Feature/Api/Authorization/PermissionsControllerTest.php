@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Authorization;
+namespace Tests\Feature\Api\Authorization;
 
 use Facades\Tests\Setup\UserFactory;
 use Tests\Feature\ApiTestCase;
-use Vanguard\Permission;
-use Vanguard\Transformers\PermissionTransformer;
+use RoleModule\Permission;
+use RoleModule\Transformer\PermissionTransformer;
 use Vanguard\User;
 
 class PermissionsControllerTest extends ApiTestCase

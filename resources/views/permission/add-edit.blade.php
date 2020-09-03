@@ -75,8 +75,8 @@
 
 @section('scripts')
     @if ($edit)
-        {!! JsValidator::formRequest('Vanguard\Http\Requests\Permission\UpdatePermissionRequest', '#permission-form') !!}
+        {!! JsValidator::formRequest('RoleModule\Http\Requests\Permission\UpdatePermissionRequest', '#permission-form') !!}
     @else
-        {!! JsValidator::formRequest('Vanguard\Http\Requests\Permission\CreatePermissionRequest', '#permission-form') !!}
+        {!! JsValidator::formRequest('RoleModule\Http\Requests\Permission\CreatePermissionRequest', '#permission-form') !!}
     @endif
 @stop

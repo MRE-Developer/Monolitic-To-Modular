@@ -5,13 +5,13 @@ namespace Vanguard\Http\Controllers\Api\Authorization;
 use Cache;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Vanguard\Http\Controllers\Api\ApiController;
-use Vanguard\Http\Requests\Role\CreateRoleRequest;
-use Vanguard\Http\Requests\Role\RemoveRoleRequest;
-use Vanguard\Http\Requests\Role\UpdateRoleRequest;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Http\Requests\Role\CreateRoleRequest;
+use RoleModule\Http\Requests\Role\RemoveRoleRequest;
+use RoleModule\Http\Requests\Role\UpdateRoleRequest;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\User\UserRepository;
-use Vanguard\Role;
-use Vanguard\Transformers\RoleTransformer;
+use RoleModule\Role;
+use RoleModule\Transformer\RoleTransformer;
 
 /**
  * Class RolesController

@@ -3,8 +3,8 @@
 namespace Vanguard\Providers;
 
 use Route;
-use Vanguard\Permission;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Permission;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\Session\SessionRepository;
 use Vanguard\Repositories\User\UserRepository;
 use Illuminate\Routing\Router;
@@ -36,7 +36,6 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         $this->bindUser();
-        $this->bindRole();
         $this->bindSession();
     }
 
@@ -94,15 +93,12 @@ class RouteServiceProvider extends ServiceProvider
         $this->bindUsingRepository('user', UserRepository::class);
     }
 
-    private function bindRole()
-    {
-        $this->bindUsingRepository('role', RoleRepository::class);
-    }
 
     private function bindSession()
     {
         $this->bindUsingRepository('session', SessionRepository::class);
     }
+
 
     private function bindUsingRepository($entity, $repository, $method = 'find')
     {

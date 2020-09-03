@@ -3,12 +3,12 @@
 namespace Vanguard\Http\Controllers\Api\Authorization;
 
 use Vanguard\Http\Controllers\Api\ApiController;
-use Vanguard\Http\Requests\Permission\CreatePermissionRequest;
-use Vanguard\Http\Requests\Permission\RemovePermissionRequest;
-use Vanguard\Http\Requests\Permission\UpdatePermissionRequest;
-use Vanguard\Permission;
-use Vanguard\Repositories\Permission\PermissionRepository;
-use Vanguard\Transformers\PermissionTransformer;
+use RoleModule\Http\Requests\Permission\CreatePermissionRequest;
+use RoleModule\Http\Requests\Permission\RemovePermissionRequest;
+use RoleModule\Http\Requests\Permission\UpdatePermissionRequest;
+use RoleModule\Permission;
+use RoleModule\Database\Repositories\Permission\PermissionRepository;
+use RoleModule\Transformer\PermissionTransformer;
 
 /**
  * Class PermissionsController

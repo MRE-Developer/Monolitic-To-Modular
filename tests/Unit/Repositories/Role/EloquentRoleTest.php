@@ -6,9 +6,9 @@ use Facades\Tests\Setup\RoleFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Facades\Tests\Setup\UserFactory;
 use Tests\TestCase;
-use Vanguard\Events\Role\Created;
-use Vanguard\Repositories\Role\EloquentRole;
-use Vanguard\Role;
+use RoleModule\Event\Role\Created;
+use RoleModule\Database\Repositories\Role\EloquentRole;
+use RoleModule\Role;
 
 class EloquentRoleTest extends TestCase
 {
@@ -71,7 +71,7 @@ class EloquentRoleTest extends TestCase
     /** @test */
     public function update()
     {
-        $this->expectsEvents(\Vanguard\Events\Role\Updated::class);
+        $this->expectsEvents(\RoleModule\Event\Role\Updated::class);
 
         $role = factory(Role::class)->create();
 
@@ -85,7 +85,7 @@ class EloquentRoleTest extends TestCase
     /** @test */
     public function delete_role()
     {
-        $this->expectsEvents(\Vanguard\Events\Role\Deleted::class);
+        $this->expectsEvents(\RoleModule\Event\Role\Deleted::class);
 
         $role = factory(Role::class)->create();
 
@@ -98,7 +98,7 @@ class EloquentRoleTest extends TestCase
     public function updatePermissions()
     {
         $role = factory(Role::class)->create();
-        $permissions = factory(\Vanguard\Permission::class)->times(2)->create();
+        $permissions = factory(\RoleModule\Permission::class)->times(2)->create();
 
         $this->repo->updatePermissions($role->id, $permissions->pluck('id')->toArray());
 

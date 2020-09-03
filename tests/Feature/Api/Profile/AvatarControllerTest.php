@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Profile;
+namespace Tests\Feature\Api\Profile;
 
 use Illuminate\Http\UploadedFile;
 use Storage;

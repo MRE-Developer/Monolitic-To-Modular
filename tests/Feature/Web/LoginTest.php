@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Web\Auth;
+namespace Tests\Feature\Web;
 
 use Authy;
 use Carbon\Carbon;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Http\Controllers\Api\Users;
+namespace Tests\Feature\Api\Users;
 
 use Facades\Tests\Setup\UserFactory;
 use Illuminate\Support\Arr;
@@ -8,7 +8,7 @@ use Tests\Feature\ApiTestCase;
 use Vanguard\Country;
 use Vanguard\Events\User\Deleted;
 use Vanguard\Events\User\UpdatedByAdmin;
-use Vanguard\Role;
+use RoleModule\Role;
 use Vanguard\Support\Enum\UserStatus;
 use Vanguard\Transformers\UserTransformer;
 use Vanguard\User;

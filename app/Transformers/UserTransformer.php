@@ -4,7 +4,7 @@ namespace Vanguard\Transformers;
 
 use League\Fractal\TransformerAbstract;
 use Vanguard\Repositories\Country\CountryRepository;
-use Vanguard\Repositories\Role\RoleRepository;
+use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\User;
 
 class UserTransformer extends TransformerAbstract
@@ -42,7 +42,7 @@ class UserTransformer extends TransformerAbstract
             return null;
         }
 
-        return $this->item($user->role, new RoleTransformer);
+        return $this->item($user->role, new \RoleModule\Transformer\RoleTransformer);
     }
 
     public function includeCountry(User $user)
