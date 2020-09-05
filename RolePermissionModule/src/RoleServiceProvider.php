@@ -2,7 +2,9 @@
 
 namespace RoleModule;
 
+use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
+use RoleModule\Database\DefineRelations;
 use RoleModule\Database\seeds\PermissionsSeeder;
 use RoleModule\Database\seeds\RolesSeeder;
 use RoleModule\Http\Middleware\CheckPermissions;
@@ -18,6 +20,8 @@ class RoleServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        DefineRelations::roleRelations();
+        DefineRelations::permissionRelations();
         app("router")->aliasMiddleware('role', CheckRole::class);
         app("router")->aliasMiddleware('permission', CheckPermissions::class);
 
@@ -28,9 +32,12 @@ class RoleServiceProvider extends ServiceProvider
 
     public function boot()
     {
+
         $this->bindRole();
         $this->defineDirective();
 
+        $this->loadViewsFrom(__DIR__. "/views", "Role");
+        app(Factory::class)->load(__DIR__. "/Database/factories");
         $this->loadMigrationsFrom(__DIR__. '/Database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/roles_routes.php');
     }

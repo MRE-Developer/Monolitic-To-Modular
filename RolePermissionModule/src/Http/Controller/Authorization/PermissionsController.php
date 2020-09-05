@@ -46,7 +46,7 @@ class PermissionsController extends Controller
      */
     public function index()
     {
-        return view('permission.index', [
+        return view('Role::permission.index', [
             'roles' => $this->roles->all(),
             'permissions' => $this->permissions->all()
         ]);
@@ -59,7 +59,7 @@ class PermissionsController extends Controller
      */
     public function create()
     {
-        return view('permission.add-edit', ['edit' => false]);
+        return view('Role::permission.add-edit', ['edit' => false]);
     }
 
     /**
@@ -84,7 +84,7 @@ class PermissionsController extends Controller
      */
     public function edit(Permission $permission)
     {
-        return view('permission.add-edit', [
+        return view('Role::permission.add-edit', [
             'edit' => true,
             'permission' => $permission
         ]);

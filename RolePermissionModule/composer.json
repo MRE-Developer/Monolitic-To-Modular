@@ -1,0 +1,15 @@
+{
+    "name" : "codino/roles",
+    "autoload": {
+        "psr-4": {
+            "RoleModule\\" : "/src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RoleModule\\RoleServiceProvider"
+            ]
+        }
+    }
+}

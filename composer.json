@@ -23,6 +23,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/loshmis/laravel-countries"
+        },
+        {
+            "type": "path",
+            "url": "./RolePermissionModule"
         }
     ],
     "require": {
@@ -30,7 +34,9 @@
         "ext-json": "*",
         "akaunting/setting": "^1.0",
         "anhskohbo/no-captcha": "3.*",
+        "codino/roles": "dev-master",
         "fideloper/proxy": "~4.0",
+        "imanghafoori/eloquent-relativity": "^1.0",
         "intervention/image": "^2.3",
         "jenssegers/agent": "^2.5",
         "lab404/laravel-impersonate": "^1.2",
@@ -61,8 +67,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "Vanguard\\": "app/",
-            "RoleModule\\": "RolePermissionModule/"
+            "Vanguard\\": "app/"
         }
     },
     "autoload-dev": {

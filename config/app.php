@@ -207,7 +207,6 @@ return [
         Vanguard\Services\Auth\TwoFactor\AuthyServiceProvider::class,
         Vanguard\Providers\VanguardServiceProvider::class,
 
-        RoleModule\RoleServiceProvider::class,
     ],
 
     /*

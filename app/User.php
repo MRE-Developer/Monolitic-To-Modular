@@ -2,6 +2,7 @@
 
 namespace Vanguard;
 
+use Imanghafoori\Relativity\DynamicRelations;
 use Mail;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -14,7 +15,6 @@ use Vanguard\Presenters\UserPresenter;
 use Vanguard\Services\Auth\Api\TokenFactory;
 use Vanguard\Services\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Vanguard\Services\Auth\TwoFactor\Contracts\Authenticatable as TwoFactorAuthenticatableContract;
-use Vanguard\Support\Authorization\AuthorizationUserTrait;
 use Vanguard\Support\CanImpersonateUsers;
 use Vanguard\Support\Enum\UserStatus;
 
@@ -23,7 +23,7 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract, 
     use TwoFactorAuthenticatable,
         CanResetPassword,
         Presentable,
-        AuthorizationUserTrait,
+        DynamicRelations,
         Notifiable,
         CanImpersonateUsers;
 

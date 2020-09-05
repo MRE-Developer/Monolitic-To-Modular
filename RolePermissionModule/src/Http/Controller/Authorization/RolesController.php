@@ -40,7 +40,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('role.index', ['roles' => $this->roles->getAllWithUsersCount()]);
+        return view('Role::role.index', ['roles' => $this->roles->getAllWithUsersCount()]);
     }
 
     /**
@@ -50,7 +50,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        return view('role.add-edit', ['edit' => false]);
+        return view('Role::role.add-edit', ['edit' => false]);
     }
 
     /**
@@ -75,7 +75,7 @@ class RolesController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('role.add-edit', [
+        return view('Role::role.add-edit', [
             'role' => $role,
             'edit' => true
         ]);
