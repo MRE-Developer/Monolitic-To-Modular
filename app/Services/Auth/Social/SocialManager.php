@@ -4,7 +4,6 @@ namespace Vanguard\Services\Auth\Social;
 
 use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as SocialUser;
-use RoleModule\Database\Repositories\Role\RoleRepository;
 use Vanguard\Repositories\User\UserRepository;
 use Vanguard\Support\Enum\UserStatus;
 
@@ -16,20 +15,14 @@ class SocialManager
      * @var UserRepository
      */
     private $users;
-    /**
-     * @var RoleRepository
-     */
-    private $roles;
 
     /**
      * SocialManager constructor.
      * @param UserRepository $users
-     * @param RoleRepository $roles
      */
-    public function __construct(UserRepository $users, RoleRepository $roles)
+    public function __construct(UserRepository $users)
     {
         $this->users = $users;
-        $this->roles = $roles;
     }
 
     /**
@@ -50,7 +43,6 @@ class SocialManager
             // exist in our database. That means that we have to create new user here
             list($firstName, $lastName) = $this->parseUserFullName($socialUser);
 
-            $role = $this->roles->findByName('User');
 
             $user = $this->users->create([
                 'email' => $socialUser->getEmail(),
@@ -59,7 +51,6 @@ class SocialManager
                 'last_name' => $lastName,
                 'status' => UserStatus::ACTIVE,
                 'avatar' => $this->getAvatarForProvider($provider, $socialUser),
-                'role_id' => $role->id
             ]);
         }
 

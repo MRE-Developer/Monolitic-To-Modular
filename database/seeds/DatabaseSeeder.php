@@ -23,4 +23,10 @@ class DatabaseSeeder extends Seeder
 
         Model::reguard();
     }
+
+    public static function addSeeder($seeder) {
+        if (in_array(! $seeder, self::$seeders)){
+            (self::$seeders[] = $seeder);
+        };
+    }
 }

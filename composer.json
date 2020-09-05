@@ -43,7 +43,6 @@
         "laravel/framework": "^6.0",
         "laravel/socialite": "^4.0",
         "laravelcollective/html": "^6.0",
-        "league/fractal": "^0.16.0",
         "proengsoft/laravel-jsvalidation": "2.5.*",
         "tymon/jwt-auth": "1.0.0-rc.5",
         "vanguardapp/activity-log": "^1.0.0",

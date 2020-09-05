@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a38475677d9f3ae6d6bb249ebf15c6ee",
+    "content-hash": "04385f395f88fc01f334bfe3ae568525",
     "packages": [
         {
             "name": "akaunting/setting",
@@ -135,7 +135,11 @@
             "dist": {
                 "type": "path",
                 "url": "./RolePermissionModule",
-                "reference": "edccd8f2e4177b5eb6718747734b05e77ef6b6bd"
+                "reference": "1c62ae350f0ba956bbf7bc7c2b9692ebc5f5272e"
+            },
+            "require": {
+                "league/fractal": "^0.16.0",
+                "php": "^7.2"
             },
             "type": "library",
             "extra": {
@@ -147,7 +151,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "RoleModule\\": "/src"
+                    "RoleModule\\": "src/"
                 }
             },
             "transport-options": {

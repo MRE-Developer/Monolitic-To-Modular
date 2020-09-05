@@ -3,6 +3,7 @@
 namespace RoleModule;
 
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use RoleModule\Database\DefineRelations;
 use RoleModule\Database\seeds\PermissionsSeeder;
@@ -15,11 +16,15 @@ use RoleModule\Database\Repositories\Role\EloquentRole;
 use RoleModule\Database\Repositories\Role\RoleRepository;
 use Route;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Vanguard\Providers\VanguardServiceProvider;
+use Vanguard\User;
 
-class RoleServiceProvider extends ServiceProvider
-{
-    public function register()
-    {
+class RoleServiceProvider extends ServiceProvider {
+    public function register() {
+
+        array_splice(VanguardServiceProvider::$plugs, 3, 0, [
+            \RoleModule\Plugins\RolesAndPermissions::class
+        ]);
         DefineRelations::roleRelations();
         DefineRelations::permissionRelations();
         app("router")->aliasMiddleware('role', CheckRole::class);
@@ -30,21 +35,25 @@ class RoleServiceProvider extends ServiceProvider
         $this->defineSeeder();
     }
 
-    public function boot()
-    {
+    public function boot() {
 
+        $this->defineListener();
         $this->bindRole();
         $this->defineDirective();
 
-        $this->loadViewsFrom(__DIR__. "/views", "Role");
-        app(Factory::class)->load(__DIR__. "/Database/factories");
-        $this->loadMigrationsFrom(__DIR__. '/Database/migrations');
+        User::saving(function ($user){
+            $roles = app(RoleRepository::class);
+            $user->role_id = request("role_id") ?: $roles->findByName("User")->id;
+        });
+
+        $this->loadViewsFrom(__DIR__ . "/views", "Role");
+        app(Factory::class)->load(__DIR__ . "/Database/factories");
+        $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/roles_routes.php');
     }
 
-    private function bindRole()
-    {
-        Route::bind('role', function ($id){
+    private function bindRole() {
+        Route::bind('role', function ($id) {
             if ($object = app(RoleRepository::class)->find($id)) {
                 return $object;
             }
@@ -72,7 +81,14 @@ class RoleServiceProvider extends ServiceProvider
     }
 
     private function defineSeeder() {
-        \DatabaseSeeder::$seeders[] = RolesSeeder::class;
-        \DatabaseSeeder::$seeders[] = PermissionsSeeder::class;
+        \DatabaseSeeder::addSeeder(RolesSeeder::class);
+        \DatabaseSeeder::addSeeder(PermissionsSeeder::class);
+    }
+
+    public function defineListener() {
+        Event::listen("seeding.users", function () {
+            $admin = Role::where('name', 'Admin')->first();
+            return ["role_id" => $admin->id];
+        });
     }
 }

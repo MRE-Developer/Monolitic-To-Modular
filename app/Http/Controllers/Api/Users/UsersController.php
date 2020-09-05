@@ -61,7 +61,7 @@ class UsersController extends ApiController
     {
         $data = $request->only([
             'email', 'password', 'username', 'first_name', 'last_name',
-            'phone', 'address', 'country_id', 'birthday', 'role_id'
+            'phone', 'address', 'country_id', 'birthday'
         ]);
 
         $data += [

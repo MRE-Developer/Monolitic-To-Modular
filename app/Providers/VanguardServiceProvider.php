@@ -14,6 +14,13 @@ use \Vanguard\UserActivity\Widgets\ActivityWidget;
 
 class VanguardServiceProvider extends BaseVanguardServiceProvider
 {
+    public static $plugs = [
+        \Vanguard\Support\Plugins\Dashboard\Dashboard::class,
+        \Vanguard\Support\Plugins\Users::class,
+        \Vanguard\UserActivity\UserActivity::class,
+        \Vanguard\Support\Plugins\Settings::class,
+        \Vanguard\Announcements\Announcements::class,
+    ];
     /**
      * List of registered plugins.
      *
@@ -21,14 +28,7 @@ class VanguardServiceProvider extends BaseVanguardServiceProvider
      */
     protected function plugins()
     {
-        return [
-            \Vanguard\Support\Plugins\Dashboard\Dashboard::class,
-            \Vanguard\Support\Plugins\Users::class,
-            \Vanguard\UserActivity\UserActivity::class,
-            \RoleModule\Plugins\RolesAndPermissions::class,
-            \Vanguard\Support\Plugins\Settings::class,
-            \Vanguard\Announcements\Announcements::class,
-        ];
+        return self::$plugs;
     }
 
     /**

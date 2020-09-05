@@ -2,8 +2,17 @@
     "name" : "codino/roles",
     "autoload": {
         "psr-4": {
-            "RoleModule\\" : "/src"
+            "RoleModule\\" : "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RoleModuleTests\\" : "tests/"
+        }
+    },
+    "require": {
+        "php" : "^7.2",
+        "league/fractal": "^0.16.0"
     },
     "extra": {
         "laravel": {

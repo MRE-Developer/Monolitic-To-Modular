@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Web;
+namespace RoleModuleTests;
 
 use Facades\Tests\Setup\UserFactory;
 use Facades\Tests\Setup\RoleFactory;

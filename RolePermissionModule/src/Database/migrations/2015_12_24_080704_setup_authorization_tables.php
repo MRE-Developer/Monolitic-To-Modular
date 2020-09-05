@@ -43,6 +43,11 @@ class SetupAuthorizationTables extends Migration
 
             $table->primary(['permission_id', 'role_id']);
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->unsignedInteger('role_id');
+        });
+
     }
 
     /**
@@ -55,5 +60,8 @@ class SetupAuthorizationTables extends Migration
         Schema::drop('permission_role');
         Schema::drop('permissions');
         Schema::drop('roles');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role_id');
+        });
     }
 }
